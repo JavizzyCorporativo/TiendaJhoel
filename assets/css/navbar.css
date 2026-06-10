@@ -46,3 +46,34 @@ body {
 .navbar-toggler-icon {
     filter: invert(1);
 }
+
+
+.banner {
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.6)
+    ),
+    url('https://img.magnific.com/vector-gratis/fondo-degradado-abstracto-moderno-elementos-elegantes-ilustracion-vectorial_361591-3821.jpg?semt=ais_hybrid&w=740&q=80');
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.banner h1 {
+    font-size: 3.5rem;
+}
+
+@media (max-width: 768px) {
+    .banner {
+        text-align: center;
+    }
+
+    .banner h1 {
+        font-size: 2rem;
+    }
+
+    .banner .btn {
+        width: 100%;
+    }
+}
