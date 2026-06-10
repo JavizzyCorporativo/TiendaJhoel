@@ -53,7 +53,7 @@ body {
         rgba(0, 0, 0, 0.6),
         rgba(0, 0, 0, 0.6)
     ),
-    url('https://img.magnific.com/vector-gratis/fondo-degradado-abstracto-moderno-elementos-elegantes-ilustracion-vectorial_361591-3821.jpg?semt=ais_hybrid&w=740&q=80');
+    url('/assets/img/portada.webp');
 
     background-size: cover;
     background-position: center;
@@ -76,4 +76,11 @@ body {
     .banner .btn {
         width: 100%;
     }
+}
+.bi {
+    font-family: bootstrap-icons !important;
+}
+#footer
+{
+    background-color: rgb(0, 0, 0);
 }
