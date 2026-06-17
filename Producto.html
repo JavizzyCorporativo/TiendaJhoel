@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMPRA - INDECO ZOOBIO</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/catalogocroquetas.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <li class="nav-item">
+                <a class="navbar-brand" href="#">INDECO ZOOBIO</a>
+            </li>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Acerca de Nosotros.html">Acerca de Nosotros</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Productos
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="Croquetas.html">Croquetas</a></li>
+                            <li><a class="dropdown-item" href="Accesorios.html">Accesorios</a></li>
+                            <li><a class="dropdown-item" href="Collares.html">Collares</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+
+        <div id="producto-detalle" class="row g-5"></div>
+
+    </div>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+
+    <script>
+
+        const parametros = new URLSearchParams(window.location.search);
+        const idProducto = parametros.get("id");
+
+        Papa.parse("assets/data/Catalogo.csv", {
+            download: true,
+            header: true,
+            skipEmptyLines: true,
+
+            complete: function (results) {
+
+                const productos = results.data;
+
+                const producto = productos.find(
+                    p => p.id == idProducto
+                );
+
+                const contenedor = document.getElementById("producto-detalle");
+
+                if (!producto) {
+
+                    contenedor.innerHTML = `
+                <div class="col-12 text-center">
+                    <h2>Producto no encontrado</h2>
+                </div>
+            `;
+
+                    return;
+                }
+
+                contenedor.innerHTML = `
+        
+            <div class="col-lg-6" data-aos="fade-right">
+
+                <div class="card shadow border-0">
+
+                    <img src="${producto.imagen}"
+                         class="img-fluid producto-detalle-img">
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-6" data-aos="fade-left">
+
+                <span class="badge fs-6 mb-3 marca-badge">
+                    ${producto.marca}
+                </span>
+
+                <h1 class="fw-bold mb-3">
+                    ${producto.nombre}
+                </h1>
+
+                <h2 class="precio mb-4" id="card-catalogo-precio">
+                    Bs ${producto.precio}
+                </h2>
+
+                <p class="lead">
+                    ${producto.descripcion}
+                </p>
+
+                <hr>
+
+                <div class="d-grid gap-2">
+
+                    <a href="https://wa.me/59160013334?text=${encodeURIComponent(
+                                        `Hola, quiero información sobre ${producto.nombre}`
+                                    )}"
+                    target="_blank"
+                    class="btn btn-success btn-lg">
+
+                        <i class="bi bi-whatsapp"></i>
+                        Consultar por WhatsApp
+
+                    </a>
+
+                    <a href="Croquetas.html"
+                       class="btn btn-outline-secondary">
+
+                        Volver al catálogo
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        `;
+
+                AOS.refresh();
+            }
+        });
+
+    </script>
+
+
+
+    <!-- Footer -->
+    <footer class="text-white pt-5 pb-3 bg-black" id="footer">
+        <div class="container" data-aos="zoom-in">
+            <div class="row">
+
+                <!-- Empresa -->
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold">INDECO ZOOBIO</h5>
+                    <p>
+                        Empresa dedicada a brindar soluciones innovadoras y productos de calidad
+                        para el desarrollo de proyectos y servicios profesionales.
+                    </p>
+                </div>
+                <!-- Enlaces -->
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold">Enlaces Rápidos</h5>
+                    <div class="d-flex gap-4 mt-3">
+                        <a href="#" class="text-white fs-3">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+
+                        <a href="#" class="text-white fs-3">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+
+                        <a href="#" class="text-white fs-3">
+                            <i class="bi bi-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contacto -->
+                <div class="col-md-4 mb-4">
+                    <h5 class="fw-bold">Contacto</h5>
+                    <p><i class="bi bi-geo-alt-fill"></i> Santa Cruz, Bolivia</p>
+                    <p><i class="bi bi-telephone-fill"></i> +591 60013334</p>
+                    <p><i class="bi bi-envelope-fill"></i> contacto@indecozoobio.com</p>
+
+                </div>
+
+            </div>
+
+            <hr class="border-light">
+
+            <div class="text-center">
+                <p class="mb-0">
+                    &copy; 2026 INDECO ZOOBIO. Todos los derechos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            Papa.parse("assets/data/Catalogo.csv", {
+                download: true,
+                header: true,
+                skipEmptyLines: true,
+
+                complete: function (results) {
+
+                    const productos = results.data;
+                    const contenedor = document.getElementById("contenedor-productos");
+
+                    productos.forEach((producto, index) => {
+
+                        contenedor.innerHTML += `
+                    <div class="col-12 col-sm-6 col-lg-4"
+                         data-aos="fade-up"
+                         data-aos-delay="${index * 100}">
+                         
+                        <div class="card producto-card h-100 shadow border-0">
+
+                            <img src="${producto.imagen}"
+                                 class="card-img-top producto-img"
+                                 alt="${producto.nombre}">
+
+                            <div class="card-body d-flex flex-column">
+
+                                <span class="badge mb-2" id="card-catalogo-whiskas">
+                                    ${producto.marca}
+                                </span>
+
+                                <h5 class="card-title">
+                                    ${producto.nombre}
+                                </h5>
+
+                                <p class="card-text text-muted flex-grow-1">
+                                    ${producto.descripcion}
+                                </p>
+
+                                <div class="d-flex justify-content-between align-items-center mt-3">
+
+                                    <span class="fs-4 fw-bold" id="card-catalogo-precio">
+                                        Bs ${producto.precio}
+                                    </span>
+
+                                    <a href="producto.html?id=${producto.id}"
+                                       class="btn" id="card-catalogo-boton">
+                                        Ver más
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                `;
+                    });
+
+                    AOS.refresh();
+                }
+            });
+        });
+    </script>
+
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+</body>
+
+</html>
