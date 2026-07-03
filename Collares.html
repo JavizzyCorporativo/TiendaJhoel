@@ -1,195 +1,234 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COLLARES - INDECO ZOOBIO</title>
+
     <link rel="icon" type="image/x-icon" href="assets/img/logo.png">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/navbar.css">
     <link rel="stylesheet" href="assets/css/catalogocroquetas.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
+
+    <style>
+        .producto-card {
+            border-radius: 15px;
+            overflow: hidden;
+            transition: .3s;
+            height: 100%;
+        }
+
+        .producto-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .producto-img-contenedor {
+            height: 210px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #fff;
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .producto-img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+
+        .card-title {
+            min-height: 48px;
+        }
+
+        .card-text {
+            min-height: 60px;
+        }
+    </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-            <li class="nav-item">
-                <a class="navbar-brand" href="#">INDECO ZOOBIO</a>
-            </li>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Acerca de Nosotros.html">Acerca de Nosotros</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Productos
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="Croquetas.html">Croquetas</a></li>
-                            <li><a class="dropdown-item" href="Accesorios.html">Accesorios</a></li>
-                            <li><a class="dropdown-item" href="Collares.html">Collares</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Contacto.html">Contacto</a>
-                    </li>
-                </ul>
-            </div>
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">INDECO ZOOBIO</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Inicio</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="Acerca de Nosotros.html">Acerca de Nosotros</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                        Productos
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="Croquetas.html">Croquetas</a></li>
+                        <li><a class="dropdown-item" href="Accesorios.html">Accesorios</a></li>
+                        <li><a class="dropdown-item" href="Collares.html">Collares</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="Contacto.html">Contacto</a>
+                </li>
+
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
 
+<div class="container py-5">
 
-    <div class="container py-5">
-        <div class="row mb-5" data-aos="fade-up">
-            <div class="col-12 text-center">
-                <h2 class="fw-bold">Nuestro Catalogo de Croquetas</h2>
-                <p class="lead">
-                    En INDECO ZOOBIO ofrecemos productos de alta calidad para el cuidado,
-                    alimentación, salud y bienestar de tus mascotas.
-                </p>
-            </div>
+    <div class="row mb-5" data-aos="fade-up">
+        <div class="col-12 text-center">
+            <h2 class="fw-bold">Nuestro Catálogo de Collares</h2>
+            <p class="lead">
+                En INDECO ZOOBIO ofrecemos collares y accesorios de calidad para tus mascotas.
+            </p>
         </div>
-
-
-        <div class="row g-4" id="contenedor-productos"></div>
-
     </div>
 
+    <div class="row g-4" id="contenedor-productos"></div>
 
+</div>
 
+<footer class="text-white pt-5 pb-3 bg-black" id="footer">
+    <div class="container" data-aos="zoom-in">
+        <div class="row">
 
-
-
-
-
-
-
-    <!-- Footer -->
-    <footer class="text-white pt-5 pb-3 bg-black" id="footer">
-        <div class="container" data-aos="zoom-in">
-            <div class="row">
-
-                <!-- Empresa -->
-                <div class="col-md-4 mb-4">
-                    <h5 class="fw-bold">INDECO ZOOBIO</h5>
-                    <p>
-                        Empresa dedicada a brindar soluciones innovadoras y productos de calidad
-                        para el desarrollo de proyectos y servicios profesionales.
-                    </p>
-                </div>
-                <!-- Enlaces -->
-                <div class="col-md-4 mb-4">
-                    <h5 class="fw-bold">Enlaces Rápidos</h5>
-                    <div class="d-flex gap-4 mt-3">
-                        <a href="#" class="text-white fs-3">
-                            <i class="bi bi-facebook"></i>
-                        </a>
-
-                        <a href="#" class="text-white fs-3">
-                            <i class="bi bi-instagram"></i>
-                        </a>
-
-                        <a href="#" class="text-white fs-3">
-                            <i class="bi bi-whatsapp"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Contacto -->
-                <div class="col-md-4 mb-4">
-                    <h5 class="fw-bold">Contacto</h5>
-                    <p><i class="bi bi-geo-alt-fill"></i> Santa Cruz, Bolivia</p>
-                    <p><i class="bi bi-telephone-fill"></i> +591 60013334</p>
-                    <p><i class="bi bi-envelope-fill"></i> contacto@indecozoobio.com</p>
-
-                </div>
-
+            <div class="col-md-4 mb-4">
+                <h5 class="fw-bold">INDECO ZOOBIO</h5>
+                <p>Empresa dedicada a brindar productos de calidad para mascotas.</p>
             </div>
 
-            <hr class="border-light">
-
-            <div class="text-center">
-                <p class="mb-0">
-                    &copy; 2026 INDECO ZOOBIO. Todos los derechos reservados.
-                </p>
+            <div class="col-md-4 mb-4">
+                <h5 class="fw-bold">Enlaces Rápidos</h5>
+                <div class="d-flex gap-4 mt-3">
+                    <a href="#" class="text-white fs-3"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="text-white fs-3"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="text-white fs-3"><i class="bi bi-whatsapp"></i></a>
+                </div>
             </div>
+
+            <div class="col-md-4 mb-4">
+                <h5 class="fw-bold">Contacto</h5>
+                <p><i class="bi bi-geo-alt-fill"></i> Santa Cruz, Bolivia</p>
+                <p><i class="bi bi-telephone-fill"></i> +591 60013334</p>
+                <p><i class="bi bi-envelope-fill"></i> contacto@indecozoobio.com</p>
+            </div>
+
         </div>
-    </footer>
 
+        <hr class="border-light">
 
+        <div class="text-center">
+            <p class="mb-0">&copy; 2026 INDECO ZOOBIO. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
+<script>
+    AOS.init({
+        duration: 1000,
+        once: true
+    });
 
+    document.addEventListener("DOMContentLoaded", async () => {
 
+        const categoriaActual = "Collares";
+        const contenedor = document.getElementById("contenedor-productos");
 
-    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+        try {
+            const respuesta = await fetch("assets/data/productos.json");
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
+            if (!respuesta.ok) {
+                throw new Error("No se pudo cargar productos.json");
+            }
 
-            Papa.parse("assets/data/Catalogo.csv", {
-                download: true,
-                header: true,
-                skipEmptyLines: true,
+            const productos = await respuesta.json();
 
-                complete: function (results) {
+            const productosFiltrados = productos.filter(producto =>
+                producto.categoria &&
+                producto.categoria.trim().toLowerCase() === categoriaActual.toLowerCase()
+            );
 
-                    const productos = results.data;
-                    const contenedor = document.getElementById("contenedor-productos");
+            if (productosFiltrados.length === 0) {
+                contenedor.innerHTML = `
+                    <div class="col-12 text-center">
+                        <h3>No hay productos en la categoría Collares</h3>
+                    </div>
+                `;
+                return;
+            }
 
-                    productos.forEach((producto, index) => {
+            contenedor.innerHTML = "";
 
-                        contenedor.innerHTML += `
-                    <div class="col-12 col-sm-6 col-lg-4"
+            productosFiltrados.forEach((producto, index) => {
+
+                const imagenProducto = producto.imagen && producto.imagen.trim() !== ""
+                    ? `uploads/productos/${producto.imagen}`
+                    : "assets/img/logo.png";
+
+                contenedor.innerHTML += `
+                    <div class="col-12 col-sm-6 col-lg-3"
                          data-aos="fade-up"
                          data-aos-delay="${index * 100}">
-                         
-                        <div class="card producto-card h-100 shadow border-0">
 
-                            <img src="${producto.imagen}"
-                                 class="card-img-top producto-img"
-                                 alt="${producto.nombre}">
+                        <div class="card producto-card shadow border-0">
+
+                            <div class="producto-img-contenedor">
+                                <img src="${imagenProducto}"
+                                     class="producto-img"
+                                     alt="${producto.nombre}"
+                                     onerror="this.src='assets/img/logo.png'">
+                            </div>
 
                             <div class="card-body d-flex flex-column">
 
                                 <span class="badge mb-2" id="card-catalogo-whiskas">
-                                    ${producto.marca}
+                                    ${producto.categoria}
                                 </span>
 
-                                <h5 class="card-title">
-                                    ${producto.nombre}
-                                </h5>
+                                <h5 class="card-title">${producto.nombre}</h5>
 
                                 <p class="card-text text-muted flex-grow-1">
                                     ${producto.descripcion}
                                 </p>
 
-                                <div class="d-flex justify-content-between align-items-center mt-3">
+                                <p class="mb-1">
+                                    <strong>Código:</strong> ${producto.codigo}
+                                </p>
 
-                                    <span class="fs-4 fw-bold" id="card-catalogo-precio">
-                                        Bs ${producto.precio}
+                                <p class="mb-2">
+                                    <strong>Stock:</strong> ${producto.stock}
+                                </p>
+
+                                <div class="mt-auto">
+
+                                    <span class="fs-4 fw-bold d-block mb-3" id="card-catalogo-precio">
+                                        Bs ${parseFloat(producto.precio_venta).toFixed(2)}
                                     </span>
 
-                                    <a href="producto.html?id=${producto.id}"
-                                       class="btn" id="card-catalogo-boton">
+                                    <a href="producto.html?id=${producto.id_producto}"
+                                       class="btn w-100" id="card-catalogo-boton">
                                         Ver más
                                     </a>
 
@@ -200,20 +239,23 @@
                         </div>
                     </div>
                 `;
-                    });
-
-                    AOS.refresh();
-                }
             });
-        });
-    </script>
 
-    <script>
-        AOS.init({
-            duration: 1000,
-            once: true
-        });
-    </script>
+            AOS.refresh();
+
+        } catch (error) {
+            console.error(error);
+
+            contenedor.innerHTML = `
+                <div class="col-12 text-center">
+                    <h3>Error al cargar los productos</h3>
+                    <p>Revisa que exista:</p>
+                    <code>assets/data/productos.json</code>
+                </div>
+            `;
+        }
+    });
+</script>
+
 </body>
-
 </html>

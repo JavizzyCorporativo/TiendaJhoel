@@ -1,0 +1,35 @@
+[
+    {
+        "id_producto": "5",
+        "codigo": "12312354314",
+        "nombre": "Whiskas",
+        "descripcion": "Whiskas Comida para gato seco",
+        "categoria": "Croquetas",
+        "precio_compra": "7.00",
+        "precio_venta": "10.00",
+        "stock": "50",
+        "imagen": "prod_6a47494b230967.26924794.png"
+    },
+    {
+        "id_producto": "4",
+        "codigo": "1234",
+        "nombre": "1234",
+        "descripcion": "123123",
+        "categoria": "Alimentos Balanceados",
+        "precio_compra": "123.00",
+        "precio_venta": "123.00",
+        "stock": "12",
+        "imagen": "prod_6a47453f655069.65785885.jpg"
+    },
+    {
+        "id_producto": "1",
+        "codigo": "123",
+        "nombre": "1213",
+        "descripcion": "asd123",
+        "categoria": "Jhoel perra",
+        "precio_compra": "8.00",
+        "precio_venta": "10.00",
+        "stock": "12",
+        "imagen": "prod_6a4743b34ef647.71826773.jpeg"
+    }
+]
