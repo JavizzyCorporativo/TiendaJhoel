@@ -1,35 +1,24 @@
 [
     {
+        "id_producto": "6",
+        "codigo": "PRO0002",
+        "nombre": "Whiskas Sabor Carne",
+        "descripcion": "Whiskas Sabor Carne",
+        "categoria": "Croquetas",
+        "precio_compra": "7.00",
+        "precio_venta": "10.00",
+        "stock": "50",
+        "imagen": "prod_6a47522cc0a8d3.04262044.png"
+    },
+    {
         "id_producto": "5",
-        "codigo": "12312354314",
-        "nombre": "Whiskas",
-        "descripcion": "Whiskas Comida para gato seco",
+        "codigo": "PRO0001",
+        "nombre": "Whiskas Sabor Pollo",
+        "descripcion": "Whiskas Sabor Pollo",
         "categoria": "Croquetas",
         "precio_compra": "7.00",
         "precio_venta": "10.00",
         "stock": "50",
         "imagen": "prod_6a47494b230967.26924794.png"
-    },
-    {
-        "id_producto": "4",
-        "codigo": "1234",
-        "nombre": "1234",
-        "descripcion": "123123",
-        "categoria": "Croquetas",
-        "precio_compra": "123.00",
-        "precio_venta": "123.00",
-        "stock": "12",
-        "imagen": "prod_6a47453f655069.65785885.jpg"
-    },
-    {
-        "id_producto": "1",
-        "codigo": "123",
-        "nombre": "1213",
-        "descripcion": "asd123",
-        "categoria": "Croquetas",
-        "precio_compra": "8.00",
-        "precio_venta": "10.00",
-        "stock": "12",
-        "imagen": "prod_6a4743b34ef647.71826773.jpeg"
     }
 ]
