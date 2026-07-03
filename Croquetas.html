@@ -117,6 +117,7 @@
 
             if (!respuesta.ok) {
                 throw new Error("No se pudo cargar el JSON");
+                
             }
 
             const productos = await respuesta.json();
